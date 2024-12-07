@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import colors from 'colors';
+import cors from 'cors';
 import morgan from 'morgan';
 
 
@@ -11,6 +11,7 @@ const app: Express = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors())
 
 const port = process.env.PORT || 3000;
 
